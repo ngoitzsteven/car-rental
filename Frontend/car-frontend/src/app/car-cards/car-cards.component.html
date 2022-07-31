@@ -1,0 +1,51 @@
+<div>
+    <p-card
+    header="Tesla"
+    subheader="Model X"
+    [style]="{ width: '360px'}"
+    styleClass="p-card-shadow"
+    >
+        <img src="https://www.pngmart.com/files/22/Tesla-Model-X-PNG-Photo.png" />
+<table>
+    <tr>Year: 2020</tr>
+    <tr>Mileage: 30000</tr>
+    <tr>Seat: 5</tr>
+</table>
+    <ng-template pTemplate="footer">
+        <p-button label="Book" icon="pi pi-check"></p-button>
+        <p-button
+        label="Cancel"
+        icon="pi pi-times"
+        styleClass="p-button-secondary"
+        [style]="{ 'margin-left': '.5em' }"
+        ></p-button>
+    </ng-template>
+</p-card>
+<!-- card 2 -->
+    <p-card
+    header="Advanced Card"
+    subheader="Card Subheader"
+    [style]="{ width: '360px'}"
+    styleClass="p-card-shadow"
+    >
+    <ng-template pTemplate="header">
+        <img alt="Card" src="car-frontend\src\assets\Tesla Model X.jpg" />
+    </ng-template>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
+        consequuntur error repudiandae numquam deserunt quisquam repellat libero
+        asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate
+        neque quas!
+    </p>
+    <ng-template pTemplate="footer">
+        <p-button label="Book" icon="pi pi-check"></p-button>
+        <p-button
+        label="Cancel"
+        icon="pi pi-times"
+        styleClass="p-button-secondary"
+        [style]="{ 'margin-left': '.5em' }"
+        ></p-button>
+    </ng-template>
+</p-card>
+</div>

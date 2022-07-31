@@ -1,0 +1,21 @@
+<p>reservation works!</p>
+
+
+<div>
+<table>
+    <tr>
+        <!-- [(ngModel)]="selectedCity1" -->
+        <p-cascadeSelect  [options]="countries" optionLabel="cname" optionGroupLabel="name" 
+        [optionGroupChildren]="['states', 'cities']" [style]="{'minWidth': '14rem'}" placeholder="Select a City"></p-cascadeSelect>
+        pick up day
+        return day
+        car type
+        <label for="name">Location</label>
+        <input
+          type="number"
+          id="id"
+        />
+         <!-- [(ngModel)]="productFormData.id" -->
+      </tr>
+</table>
+</div>
