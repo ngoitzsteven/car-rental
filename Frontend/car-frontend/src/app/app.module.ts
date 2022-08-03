@@ -11,6 +11,7 @@ import {CascadeSelectModule} from 'primeng/cascadeselect';
 import { ButtonModule } from 'primeng/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { MyReservationsComponent } from './my-reservations/my-reservations.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     NavBarComponent,
     ReservationComponent,
     CarCardsComponent,
+    MyReservationsComponent,
 
     
   ],

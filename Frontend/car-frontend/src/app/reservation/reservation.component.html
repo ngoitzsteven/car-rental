@@ -4,18 +4,19 @@
 <div>
 <table>
     <tr>
-        <!-- [(ngModel)]="selectedCity1" -->
-        <p-cascadeSelect  [options]="countries" optionLabel="cname" optionGroupLabel="name" 
+        <p-cascadeSelect  [options]="countries" optionLabel="countries" optionGroupLabel="name" 
         [optionGroupChildren]="['states', 'cities']" [style]="{'minWidth': '14rem'}" placeholder="Select a City"></p-cascadeSelect>
-        pick up day
-        return day
-        car type
+        <th>Pick Up Day</th>
+        <th>Return Day</th>
+        <th>Car Type</th>
+        <th>
         <label for="name">Location</label>
         <input
           type="number"
           id="id"
         />
-         <!-- [(ngModel)]="productFormData.id" -->
+        </th>
+        <!-- [(ngModel)]="productFormData.id" -->
       </tr>
 </table>
 </div>
