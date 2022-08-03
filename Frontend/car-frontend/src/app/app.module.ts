@@ -10,6 +10,9 @@ import {CardModule} from 'primeng/card';
 import {CascadeSelectModule} from 'primeng/cascadeselect';
 import { ButtonModule } from 'primeng/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CardModule,
     ButtonModule,
     BrowserAnimationsModule,
-    CascadeSelectModule
+    CascadeSelectModule,
+    HttpClientModule
   ],
   providers: [PrimeNGConfig],
   bootstrap: [AppComponent]
