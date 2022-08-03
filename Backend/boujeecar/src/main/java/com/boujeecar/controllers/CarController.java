@@ -1,5 +1,7 @@
 package com.boujeecar.controllers;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +23,15 @@ import com.boujeecar.services.CarService;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/car")
+@RequestMapping("/cars")
 public class CarController {
 	@Autowired
 	private CarService service;
 	
+	@GetMapping
+	public List<Car> findAll(){
+		return service.findAll();
+	}
 	@GetMapping("/{id}")
 	public Car findById(@PathVariable int id) {
 		return service.findById(id);

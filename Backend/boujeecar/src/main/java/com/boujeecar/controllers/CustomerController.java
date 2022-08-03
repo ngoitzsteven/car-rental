@@ -20,7 +20,7 @@ import com.boujeecar.services.CustomerServices;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/customer")
+@RequestMapping("/customers")
 public class CustomerController {
 	@Autowired
 	private CustomerServices service;

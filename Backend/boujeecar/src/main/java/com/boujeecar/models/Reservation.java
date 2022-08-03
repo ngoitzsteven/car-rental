@@ -1,101 +1,114 @@
 package com.boujeecar.models;
 
-import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 
 
 @Entity
 @Table(name = "reservation")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+
 public class Reservation {
-	private int reservationId;
-	private String startDate;
-	private String endDate;
-	private String status;
-	private int carId;
-	private int customerId;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "reservation_id")
+	private int reservationId;
+	@NotBlank
+	@Column(name = "start_date") // defaults to using the Java variable name
+	private Date startDate;
+	@NotBlank
+	@Column	(name = "end_date") // defaults to using the Java variable name
+	private Date endDate;
+	@NotBlank
+	@Column // defaults to using the Java variable name
+	private String status;
+	
+	@JsonIdentityReference(alwaysAsId = true)
+	@NotBlank
+	@ManyToOne
+	@JoinColumn (name = "car_id")// defaults to using the Java variable name
+	private Car car;
+	
+	@JsonIdentityReference(alwaysAsId = true)
+	@NotBlank
+	@ManyToOne
+	@JoinColumn (name = "customer_id")// defaults to using the Java variable name
+	private Customer customer;
+	
+	
 	public int getReservationId() {
 		return reservationId;
 	}
 	
-	@NotBlank
-	@Column // defaults to using the Java variable name
+	
 	public void setReservationId(int reservationId) {
 		this.reservationId = reservationId;
 	}
-	@NotBlank
-	@Column // defaults to using the Java variable name
-	public String getStartDate() {
+
+	public Date getStartDate() {
 		return startDate;
 	}
-	@NotBlank
-	@Column // defaults to using the Java variable name
-	public void setStartDate(String startDate) {
+	
+	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
-	@NotBlank
-	@Column // defaults to using the Java variable name
-	public String getEndDate() {
+
+	public Date getEndDate() {
 		return endDate;
 	}
-	@NotBlank
-	@Column // defaults to using the Java variable name
-	public void setEndDate(String endDate) {
+
+	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
 	
-	@NotBlank
-	@Column // defaults to using the Java variable name
 	public String getStatus() {
 		return status;
 	}
 	
-	@NotBlank
-	@Column // defaults to using the Java variable name
+
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
 	
-	@NotBlank
-	@Column // defaults to using the Java variable name
-	public int getCarId() {
-		return carId;
+	public Car getCar() {
+		return car;
 	}
-	
-	@NotBlank
-	@Column // defaults to using the Java variable name
-	public void setCarId(int carId) {
-		this.carId = carId;
+
+
+	public void setCar(Car car) {
+		this.car = car;
 	}
-	@NotBlank
-	@Column // defaults to using the Java variable name
-	public int getCustomerId() {
-		return customerId;
+
+
+	public Customer getCustomer() {
+		return customer;
 	}
-	
-	@NotBlank
-	@Column // defaults to using the Java variable name
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
+
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
-	
+
+
 	@Override
 	public String toString() {
-		return "reservaton [reservationId=" + reservationId + ", startDate=" + startDate + ", endDate=" + endDate
-				+ ", status=" + status + ", carId=" + carId + ", customerId=" + customerId + "]";
+		return "Reservation [reservationId=" + reservationId + ", startDate=" + startDate + ", endDate=" + endDate
+				+ ", status=" + status + ", car=" + car + ", customer=" + customer + "]";
 	}
+
+
 	
 	
 	

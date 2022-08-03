@@ -1,50 +1,77 @@
 package com.boujeecar.models;
 
-import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 @Table(name = "car")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "carId")
 public class Car {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "owner_id")
+	@Column(name = "car_id")
 	private int carId;
 
-	@NotBlank
+//	@NotBlank
 	@Column // defaults to using the Java variable name
 	private String model;
 
-	@NotBlank
+//	@NotBlank
 	@Column
 	private String brand;
 
-	@NotBlank
+	@Min(0)
 	@Column
 	private int mileage;
 
-	@NotBlank
+//	@NotBlank
 	@Column
 	private String color;
 
+//	@NotBlank
+//	@Column
+//	private String type;
+	@Column(name = "class")
 	@NotBlank
-	@Column
-	private String type;
+	private String clazz;
+public String getClazz() {
+		return clazz;
+	}
 
-	@NotBlank
-	@Column
+	public void setClazz(String clazz) {
+		this.clazz = clazz;
+	}
+
+	public List<Reservation> getReservations() {
+		return reservations;
+	}
+
+	public void setReservations(List<Reservation> reservations) {
+		this.reservations = reservations;
+	}
+
+	//	@NotBlank
+	@Column(name = "reservation_status")
 	private String reservationStatus;
 
+	@OneToMany(mappedBy = "car")
+	private List<Reservation> reservations;
+	
+	
+	
 	public int getCarId() {
 		return carId;
 	}
@@ -85,13 +112,13 @@ public class Car {
 		this.color = color;
 	}
 
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
+//	public String getType() {
+//		return type;
+//	}
+//
+//	public void setType(String type) {
+//		this.type = type;
+//	}
 
 	public String getReservationStatus() {
 		return reservationStatus;
@@ -101,10 +128,5 @@ public class Car {
 		this.reservationStatus = reservationStatus;
 	}
 
-	@Override
-	public String toString() {
-		return "car [carId=" + carId + ", model=" + model + ", brand=" + brand + ", mileage=" + mileage + ", color="
-				+ color + ", type=" + type + ", reservationStatus=" + reservationStatus + "]";
-	}
 
 }

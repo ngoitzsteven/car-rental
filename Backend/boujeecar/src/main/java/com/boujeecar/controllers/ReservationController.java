@@ -20,7 +20,7 @@ import com.boujeecar.services.ReservationServices;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/reservation")
+@RequestMapping("/reservations")
 public class ReservationController {
 	
 	@Autowired
