@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  selectedCity1: any;
   title = 'car-frontend';
 
   

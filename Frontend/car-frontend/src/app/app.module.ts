@@ -15,7 +15,7 @@ import { MyReservationsComponent } from './my-reservations/my-reservations.compo
 import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
 import {FormsModule} from '@angular/forms';
 import {TableModule} from 'primeng/table';
-
+import { ConfirmationService, MessageService } from 'primeng/api';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +40,7 @@ import {TableModule} from 'primeng/table';
     TableModule
     
   ],
-  providers: [PrimeNGConfig],
+  providers: [ConfirmationService, MessageService, PrimeNGConfig],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -47,7 +47,7 @@ public class Car {
 	@Column(name = "class")
 	@NotBlank
 	private String clazz;
-public String getClazz() {
+	public String getClazz() {
 		return clazz;
 	}
 

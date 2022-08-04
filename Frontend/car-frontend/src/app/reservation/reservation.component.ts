@@ -8,19 +8,19 @@ import { ReservationService } from '../services/reservation.service';
   styleUrls: ['./reservation.component.css']
 })
 export class ReservationComponent implements OnInit {
-  reservation : Reservation[] = [];
-  cols: [] = [];
+  reservations : Reservation[] = [];
   ReservationAPIService: ReservationService
   constructor(ReservationAPIService: ReservationService) {
     this.ReservationAPIService = ReservationAPIService;
    }
 
   ngOnInit(): void {
-   
-    };
-    
-    findReservationByProductId(id : number) : void {
-      this.ReservationAPIService.findReservationByCustomerId(1).subscribe;
+    this.ReservationAPIService.findReservationByCustomerId(1).subscribe((resp) => {
+      this.reservations = resp;
+    });
+  }    
+    findReservationByProductId(id : number)  {
+     this.ReservationAPIService.findReservationByCustomerId(id).subscribe;
     }
   }
 
