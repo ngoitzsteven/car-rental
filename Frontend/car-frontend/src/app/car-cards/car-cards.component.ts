@@ -8,7 +8,7 @@ import { CarService } from '../services/car.service';
 })
 export class CarCardsComponent implements OnInit {
 carService : CarService;
-  cars : Car[] = [];
+cars : Car[] = [];
   constructor(carService : CarService) { 
     this.carService = carService;
   }
