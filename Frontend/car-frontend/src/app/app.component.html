@@ -1,5 +1,9 @@
 <app-nav-bar></app-nav-bar>
-<a routerLink="/my-reservations" routerLinkActivate="active" ariaCurrentWhenActive="page">My Reservations</a>
-<a routerLink="/car-cards" routerLinkActivate="active" ariaCurrentWhenActive="page">Cars</a>
-<a routerLink="/reservation" routerLinkActivate="active" ariaCurrentWhenActive="page">Schedule a Reservation</a>
+<table>
+    <tr>
+        <th><a routerLink="/my-reservations" routerLinkActivate="active" ariaCurrentWhenActive="page">My Reservations</a></th>
+        <th><a routerLink="/car-cards" routerLinkActivate="active" ariaCurrentWhenActive="page">Cars</a></th>
+        <th><a routerLink="/reservation" routerLinkActivate="active" ariaCurrentWhenActive="page">Schedule a Reservation</a></th>
+    </tr>
+</table>
 <router-outlet></router-outlet>
