@@ -51,4 +51,9 @@ public class ReservationServiceImpl implements ReservationServices	{
 		return reservation;
 	}
 
+	@Override
+	public List<Reservation> findByCustomerId(int id) {
+		return repository.findByCustomerId(id);
+	}
+
 }

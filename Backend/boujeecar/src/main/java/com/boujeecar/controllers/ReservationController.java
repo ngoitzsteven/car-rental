@@ -1,5 +1,7 @@
 package com.boujeecar.controllers;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +32,15 @@ public class ReservationController {
 	public Reservation findById(@PathVariable int id) {
 		return service.findById(id);
 	}
+	
+	
+	@GetMapping("customer-reservation/{customer_id}")
+	public List<Reservation> findByCustomerId(@PathVariable(name = "customer_id") int id) {
+		return service.findByCustomerId(id);	
+	}
+	
+	
+	
 	// create
 	@PostMapping
 	public ResponseEntity<Reservation> create(@Valid @RequestBody Reservation reservation) {

@@ -12,6 +12,7 @@ import { ButtonModule } from 'primeng/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MyReservationsComponent } from './my-reservations/my-reservations.component';
+import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { MyReservationsComponent } from './my-reservations/my-reservations.compo
     ReservationComponent,
     CarCardsComponent,
     MyReservationsComponent,
+    CustomerProfileComponent,
 
     
   ],

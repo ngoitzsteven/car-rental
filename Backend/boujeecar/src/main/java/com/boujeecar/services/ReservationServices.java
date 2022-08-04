@@ -10,4 +10,5 @@ public interface ReservationServices {
 	Reservation update (Reservation reservation);
 	void deleteById(int id);
 	List<Reservation> findAll();
+	List<Reservation> findByCustomerId(int id);
 }
