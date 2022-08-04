@@ -19,24 +19,26 @@ import com.boujeecar.models.Customer;
 import com.boujeecar.services.CustomerServices;
 
 @RestController
-@CrossOrigin
+@CrossOrigin (origins = "*")
 @RequestMapping("/customers")
 public class CustomerController {
 	@Autowired
 	private CustomerServices service;
 	
-	
+
 	@GetMapping("/{id}")
 	public Customer findById(@PathVariable int id) {
 		return service.findById(id);
 	}
 	// create
+	
 	@PostMapping
 	public ResponseEntity<Customer> create(@Valid @RequestBody Customer customer) {
 		return new ResponseEntity<>(service.save(customer), HttpStatus.CREATED);
 	}
 	
 	// update
+	
 	@PutMapping("/{id}")
 	public Customer update(@Valid @RequestBody Customer customer, @PathVariable int id) {
 		customer.setCustomerId(id);

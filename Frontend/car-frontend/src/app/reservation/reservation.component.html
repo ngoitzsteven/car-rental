@@ -1,22 +1,44 @@
 <p>reservation works!</p>
 
+<p-table [value]="reservation" responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>reservationId</th>
+            <th>startDate</th>
+            <th>endDate</th>
+            <th>status</th>
+            <th>carId</th>
 
-<div>
-<table>
-    <tr>
-        <p-cascadeSelect  [options]="countries" optionLabel="countries" optionGroupLabel="name" 
-        [optionGroupChildren]="['states', 'cities']" [style]="{'minWidth': '14rem'}" placeholder="Select a City"></p-cascadeSelect>
-        <th>Pick Up Day</th>
-        <th>Return Day</th>
-        <th>Car Type</th>
-        <th>
-        <label for="name">Location</label>
-        <input
-          type="number"
-          id="id"
-        />
-        </th>
-        <!-- [(ngModel)]="productFormData.id" -->
-      </tr>
-</table>
-</div>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-reservation>
+        <tr>
+            <td>{{reservation.reservationId}}</td>
+            <td>{{reservation.startDate}}</td>
+            <td>{{reservation.endDate}}</td>
+            <td>{{reservation.status}}</td>
+            <td>{{reservation.carId}}</td>
+        </tr>
+    </ng-template>
+</p-table>
+
+
+<!-- <div>
+    <table>
+        <tr>
+            <p-cascadeSelect  [options]="countries" optionLabel="countries" optionGroupLabel="name" 
+            [optionGroupChildren]="['states', 'cities']" [style]="{'minWidth': '14rem'}" placeholder="Select a City"></p-cascadeSelect>
+            <th>Pick Up Day</th>
+            <th>Return Day</th>
+            <th>Car Type</th>
+            <th>
+            <label for="name">Location</label>
+            <input
+              type="number"
+              id="id"
+            />
+            </th>
+            [(ngModel)]="productFormData.id"
+          </tr>
+    </table>
+    </div> -->

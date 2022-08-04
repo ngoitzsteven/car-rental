@@ -13,7 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MyReservationsComponent } from './my-reservations/my-reservations.component';
 import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
-
+import {FormsModule} from '@angular/forms';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CustomerProfileComponent } from './customer-profile/customer-profile.co
     CarCardsComponent,
     MyReservationsComponent,
     CustomerProfileComponent,
+    
 
     
   ],
@@ -33,7 +35,10 @@ import { CustomerProfileComponent } from './customer-profile/customer-profile.co
     ButtonModule,
     BrowserAnimationsModule,
     CascadeSelectModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    TableModule
+    
   ],
   providers: [PrimeNGConfig],
   bootstrap: [AppComponent]

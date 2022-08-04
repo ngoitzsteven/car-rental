@@ -22,7 +22,7 @@ import com.boujeecar.services.CarService;
 
 
 @RestController
-@CrossOrigin
+@CrossOrigin (origins = "*")
 @RequestMapping("/cars")
 public class CarController {
 	@Autowired

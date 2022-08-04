@@ -20,27 +20,27 @@ import org.springframework.web.bind.annotation.RestController;
 import com.boujeecar.models.Reservation;
 import com.boujeecar.services.ReservationServices;
 
+@CrossOrigin(origins = "*")
 @RestController
-@CrossOrigin
 @RequestMapping("/reservations")
 public class ReservationController {
 	
 	@Autowired
 	private ReservationServices service;
-	
+
 	@GetMapping("/{id}")
 	public Reservation findById(@PathVariable int id) {
 		return service.findById(id);
 	}
 	
-	
+
 	@GetMapping("customer-reservation/{customer_id}")
 	public List<Reservation> findByCustomerId(@PathVariable(name = "customer_id") int id) {
 		return service.findByCustomerId(id);	
 	}
 	
 	
-	
+
 	// create
 	@PostMapping
 	public ResponseEntity<Reservation> create(@Valid @RequestBody Reservation reservation) {
