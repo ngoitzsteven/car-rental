@@ -23,8 +23,8 @@ cars : Car[] = [];
     })
   }
 
-  book(car: Car){
+  book(){
     this.router.navigate(['/booking']);
-    
+
   }
 }
