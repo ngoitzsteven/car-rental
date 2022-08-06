@@ -16,6 +16,10 @@ import { CustomerProfileComponent } from './customer-profile/customer-profile.co
 import {FormsModule} from '@angular/forms';
 import {TableModule} from 'primeng/table';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import {PaginatorModule} from 'primeng/paginator';
+import { BookingComponent } from './booking/booking.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +28,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
     CarCardsComponent,
     MyReservationsComponent,
     CustomerProfileComponent,
+    BookingComponent,
     
 
     
@@ -37,7 +42,8 @@ import { ConfirmationService, MessageService } from 'primeng/api';
     CascadeSelectModule,
     HttpClientModule,
     FormsModule,
-    TableModule
+    TableModule,
+    PaginatorModule
     
   ],
   providers: [ConfirmationService, MessageService, PrimeNGConfig],

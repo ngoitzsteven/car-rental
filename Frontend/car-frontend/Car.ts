@@ -4,18 +4,20 @@ export class Car{
     brand:string;
     mileage:number;
     color:string;
-    class:string;
+    clazz:string;
     reservationStatus:string;
-    reservation: any[]
+    reservation: any[];
+    seats: number;
 
-    constructor(carId = 0, model = '', brand ='', mileage = 0, color = '', clazz = '', reservationStatus = '', reservation = []){
+    constructor(carId = 0, model = '', brand ='', mileage = 0, color = '', clazz = '', reservationStatus = '', reservation = [], seats = 0){
         this.carId =carId;
         this.model =model;
         this.brand = brand;
         this.mileage = mileage;
         this.color = color;
-        this.class = clazz;
+        this.clazz = clazz;
         this.reservationStatus = reservationStatus;
         this.reservation = reservation;
+        this.seats=seats;
     }
 }

@@ -40,6 +40,11 @@ public class Car {
 //	@NotBlank
 	@Column
 	private String color;
+	
+	@Min(0)
+    @Column
+    private int seats;
+
 
 //	@NotBlank
 //	@Column
@@ -111,6 +116,14 @@ public class Car {
 	public void setColor(String color) {
 		this.color = color;
 	}
+	
+	 public int getSeats() {
+	        return seats;
+	    }
+
+	    public void setSeats(int seats) {
+	        this.seats = seats;
+	    }
 
 //	public String getType() {
 //		return type;
