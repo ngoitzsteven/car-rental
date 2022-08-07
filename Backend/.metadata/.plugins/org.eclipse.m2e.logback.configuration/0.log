@@ -1704,3 +1704,6 @@
 2022-08-05 16:17:14,326 [Worker-0: Launching boujeecar - BoujeecarApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-08-05 16:17:14,326 [Worker-0: Launching boujeecar - BoujeecarApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2022-08-05 16:17:14,326 [Worker-0: Launching boujeecar - BoujeecarApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ngoit\Desktop\car-rental\car-rental\Backend\boujeecar\src\test\resources
+2022-08-06 20:28:22,198 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-08-06 20:28:22,199 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-08-06 20:28:22,204 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource

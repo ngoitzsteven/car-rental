@@ -1,25 +1,37 @@
 import { Injectable } from '@angular/core';
 import { Reservation } from 'Reservation';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ReservationService {
-  APIServer = `reservations/`
+  APIServer = `reservations/`;
   constructor(private http: HttpClient) {
     this.http = http;
-   }
+  }
 
-  createReservation(reservationID:number, start_date:Date, end_date:Date, status:boolean,carID:number,customerID:number){}
-  readReservation(reservationID:number){}
-  updateReservation(reservationID:number, start_date:Date, end_date:Date, status:boolean,carID:number,customerID:number){}
-  deleteReservation(reservationID:number){}
+  createReservation(reservation: Reservation) {
+    console.log('Reservation Created');
+    return this.http.post(environment.baseURL + this.APIServer, reservation);
+  }
+  readReservation(reservationID: number) {
+    console.log('customer found');
+    return this.http.get(environment.baseURL + this.APIServer + reservationID);
+  }
+  updateReservation(reservation: Reservation) {
+    return this.http.post(environment.baseURL + this.APIServer, reservation);
+  }
 
-  public findReservationByCustomerId(id :number) :Observable <any> {
-    console.log("found");
-    return this.http.get(environment.baseURL + this.APIServer +'customer-reservation/' + id)
+  cancelReservation(reservation: Reservation) {
+    return this.http.post(environment.baseURL + this.APIServer, reservation);
+  }
 
+  public findReservationByCustomerId(id: number): Observable<any> {
+    console.log('found');
+    return this.http.get(
+      environment.baseURL + this.APIServer + 'customer-reservation/' + id
+    );
   }
 }
