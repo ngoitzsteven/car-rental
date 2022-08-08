@@ -1,4 +1,12 @@
 table{
     display: flex;
     justify-content: center;
+} 
+th{
+    border: 10px;
+    border-color: white;
+}
+
+text{
+    color: white;
 }
