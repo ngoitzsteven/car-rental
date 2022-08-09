@@ -24,8 +24,8 @@ export class ReservationService {
     return this.http.post(environment.baseURL + this.APIServer, reservation);
   }
 
-  cancelReservation(reservation: Reservation) {
-    return this.http.post(environment.baseURL + this.APIServer, reservation);
+  cancelReservation(reservationId: number) {
+    return this.http.post(environment.baseURL + this.APIServer, reservationId);
   }
 
   public findReservationByCustomerId(id: number): Observable<any> {

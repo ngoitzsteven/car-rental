@@ -1,5 +1,11 @@
-<table>
-    <tr>
-        <th><input type="text" label="Pick Up Date"></th><th></th><th>Pick Up Date</th><th>Drop Off Date</th>
-    </tr>
-</table>
+<div>
+    <table>
+        <tr>
+            <td> <p-dropdown  [options]="locations" optionLabel="name" [style]="{'minWidth': '14rem'}" placeholder="Select a Location"></p-dropdown></td>
+            <td><p-calendar placeholder="Pick-up Date" class="p-calender" [(ngModel)]="reservation.startDate"></p-calendar></td>
+            <td><p-calendar placeholder="Drop-off Date" [(ngModel)]="reservation.endDate"></p-calendar></td>
+            <td><p-dropdown [options]="cars" optionLabel="model" [style]="{'minWidth': '14rem'}" placeholder="Select a Vehicle" [(ngModel)]="this.thiscar"></p-dropdown></td>
+            <td><p-button class="button-color p-button-rounded" (onClick)="submitReservation()">Book</p-button></td>
+        </tr>
+    </table>
+ </div>

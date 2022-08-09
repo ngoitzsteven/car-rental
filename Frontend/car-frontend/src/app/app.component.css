@@ -17,3 +17,8 @@ body {
       border-color: purple;
 
   }
+
+  .image{
+    background-image: src="../assets/BackgroundImage.png";
+    position: absolute;
+  }

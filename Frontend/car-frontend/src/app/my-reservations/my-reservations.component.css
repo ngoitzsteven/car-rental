@@ -1,0 +1,15 @@
+table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 6px solid #fc0;
+    position: relative;
+    background-color: #fff;
+    padding: 30px 40px;
+    margin-top : 5%;
+    border-radius: 4px;
+    box-shadow: 0 2px 9px rgb(0 0 0 / 20%);
+    box-sizing: border-box;
+    min-height: 150px;
+    transition: padding-top 0.2s ease-out;
+}

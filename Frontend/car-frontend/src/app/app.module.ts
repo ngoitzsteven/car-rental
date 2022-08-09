@@ -18,6 +18,8 @@ import {TableModule} from 'primeng/table';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import {PaginatorModule} from 'primeng/paginator';
 import { BookingComponent } from './booking/booking.component';
+import {CalendarModule} from 'primeng/calendar';
+
 
 
 @NgModule({
@@ -43,7 +45,8 @@ import { BookingComponent } from './booking/booking.component';
     HttpClientModule,
     FormsModule,
     TableModule,
-    PaginatorModule
+    PaginatorModule,
+    CalendarModule
     
   ],
   providers: [ConfirmationService, MessageService, PrimeNGConfig],
