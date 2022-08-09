@@ -1,13 +1,13 @@
 export class Reservation{
     reservationId : number;
-    startDate: Date;
-    endDate: Date;
+    startDate: string;
+    endDate: string;
     status: string;
     carId: number;
     customerId: number;
 
 
-    constructor(reservationId = 0, startDate = new Date(), endDate = new Date(), status ='Booked', carId = 0, customerId = 1){
+    constructor(reservationId = 0, startDate = '', endDate = '', status ='Booked', carId = 10, customerId = 1){
         this.reservationId = reservationId;
         this.startDate = startDate;
         this.endDate = endDate;

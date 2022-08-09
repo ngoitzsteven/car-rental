@@ -7,7 +7,7 @@ import { ReservationService } from '../services/reservation.service';
   templateUrl: './reservation.component.html',
   styleUrls: ['./reservation.component.css']
 })
-export class ReservationComponent implements OnInit, OnChanges {
+export class ReservationComponent implements OnInit {
   reservations : Reservation[] = [];
   ReservationAPIService: ReservationService
   constructor(ReservationAPIService: ReservationService) {
@@ -19,16 +19,12 @@ export class ReservationComponent implements OnInit, OnChanges {
       this.reservations = resp;
     });
   }
-  ngOnChanges(): void {
-    this.ReservationAPIService.findReservationByCustomerId(1).subscribe((resp) => {
-      this.reservations = resp;
-    });
-  }    
+  
     findReservationByProductId(id : number)  {
      this.ReservationAPIService.findReservationByCustomerId(id).subscribe;
     }
 
-    cancelRes(reservation: Reservation){
+    cancelRes(reservation: any){
       console.log(reservation);
       this.ReservationAPIService.cancelReservation(reservation.reservationId);
     }

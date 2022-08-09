@@ -1,3 +1,4 @@
+<div class="container">
 <p-table [value]="reservations" responsiveLayout="scroll">
     <ng-template pTemplate="header">
         <tr>
@@ -6,6 +7,7 @@
             <th>Drop Off Date</th>
             <th>Status</th>
             <th>Car ID</th>
+            <th>  </th>
 
         </tr>
     </ng-template>
@@ -15,11 +17,15 @@
             <td>{{reservation.startDate}}</td>
             <td>{{reservation.endDate}}</td>
             <td>{{reservation.status}}</td>
-            <td>{{reservation.carId}}</td>
-            <td><button pButton type="button" class="p-button-danger p-button-rounded" label="Delete" (onClick)="cancelRes(this.reservation)"></button></td>
+            <td>{{reservation.car}}</td>
+            <td><button pButton type="button" class="p-button-danger p-button-rounded" label="Delete" (onClick)="cancelRes(reservation)"></button></td>
         </tr>
     </ng-template>
 </p-table>
+
+</div>
+
+
 
 
 <!-- <div>

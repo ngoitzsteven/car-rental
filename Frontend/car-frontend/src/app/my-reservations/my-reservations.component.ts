@@ -37,9 +37,7 @@ export class MyReservationsComponent implements OnInit {
 
   submitReservation(){
         this.reservation.reservationId = Math.floor(Math.random()*1000);
-        this.thiscar.carId= this.reservation.carId;
-        console.log( this.thiscar.carId);
-        console.log(this.reservation);
+        this.reservation.carId= this.thiscar.carId;
         this.rservice.createReservation(this.reservation);
   }
 }

@@ -1,11 +1,16 @@
 <div>
+    
     <table>
         <tr>
+            <th>Make a Reservation</th>
+        </tr>
+        <tr>
             <td> <p-dropdown  [options]="locations" optionLabel="name" [style]="{'minWidth': '14rem'}" placeholder="Select a Location"></p-dropdown></td>
-            <td><p-calendar placeholder="Pick-up Date" class="p-calender" [(ngModel)]="reservation.startDate"></p-calendar></td>
-            <td><p-calendar placeholder="Drop-off Date" [(ngModel)]="reservation.endDate"></p-calendar></td>
-            <td><p-dropdown [options]="cars" optionLabel="model" [style]="{'minWidth': '14rem'}" placeholder="Select a Vehicle" [(ngModel)]="this.thiscar"></p-dropdown></td>
+            <td>Pick up<p-calendar placeholder="Pick-up Date" [(ngModel)]="reservation.startDate" dateFormat="yy-mm-dd"></p-calendar></td>
+            <td>Drop off<p-calendar placeholder="Drop-off Date" [(ngModel)]="reservation.endDate" dateFormat="yy-mm-dd"></p-calendar></td>
+            <td><p-dropdown [options]="cars" optionLabel="model" [style]="{'minWidth': '14rem'}" placeholder="Select a Vehicle" [(ngModel)]="thiscar"></p-dropdown></td>
             <td><p-button class="button-color p-button-rounded" (onClick)="submitReservation()">Book</p-button></td>
         </tr>
     </table>
  </div>
+  <img src="../../assets/BackgroundImage.png" style="width: 100%">

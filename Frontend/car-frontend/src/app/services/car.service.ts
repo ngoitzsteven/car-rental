@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 
 export class CarService {
 
-  APIServer = 'cars/'
+  APIServer = 'cars'
 
   constructor(private http: HttpClient) { 
     this.http = http;
